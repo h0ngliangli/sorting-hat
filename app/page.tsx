@@ -260,8 +260,7 @@ export default function Home() {
               <h2>Welcome, young wizards and witches.</h2>
               <p className="scene-text">
                 I am the Sorting Hat, and I am here to help you discover which
-                middle school in the BRSSD district feels like the best fit for
-                your personality and preferences. Answer honestly, trust your
+                middle school is the best fit for you. Answer honestly, trust your
                 instincts, and let the magic begin.
               </p>
               <button className="primary-button" onClick={goNext}>
