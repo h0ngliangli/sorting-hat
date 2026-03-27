@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 type SchoolId = "sandpiper" | "nesbit" | "ralston"
 
@@ -130,6 +130,7 @@ const resultVideo = "/videos/sh-ending.mp4"
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([])
+  const [showResult, setShowResult] = useState(false)
 
   const currentQuestion = questions[currentStep - 1]
   const isIntro = currentStep === 0
@@ -182,6 +183,7 @@ export default function Home() {
     const nextAnswers = [...selectedAnswers]
     nextAnswers[currentStep - 1] = answerIndex
     setSelectedAnswers(nextAnswers)
+    setCurrentStep((step) => step + 1)
   }
 
   const goNext = () => {
@@ -196,6 +198,15 @@ export default function Home() {
 
     setCurrentStep((step) => step + 1)
   }
+
+  useEffect(() => {
+    if (!isComplete) {
+      setShowResult(false)
+      return
+    }
+    const timer = setTimeout(() => setShowResult(true), 8000)
+    return () => clearTimeout(timer)
+  }, [isComplete])
 
   const restart = () => {
     setSelectedAnswers([])
@@ -228,7 +239,7 @@ export default function Home() {
         </div>
 
         <div className="content-panel">
-          <div className="progress-row">
+          {/* <div className="progress-row">
             <span>
               Scene {Math.min(currentStep + 1, questions.length + 2)} of{" "}
               {questions.length + 2}
@@ -241,7 +252,7 @@ export default function Home() {
                 }}
               />
             </div>
-          </div>
+          </div> */}
 
           {isIntro ? (
             <div className="scene-body">
@@ -257,7 +268,7 @@ export default function Home() {
                 Start
               </button>
             </div>
-          ) : isComplete && result ? (
+          ) : isComplete && !showResult ? null : isComplete && result ? (
             <div className="scene-body">
               <p className="scene-label">Sorting Results</p>
               <h2>{result.school}</h2>
@@ -292,17 +303,6 @@ export default function Home() {
                     </button>
                   )
                 })}
-              </div>
-              <div className="button-row">
-                <button
-                  className="primary-button"
-                  onClick={goNext}
-                  disabled={
-                    typeof selectedAnswers[currentStep - 1] !== "number"
-                  }
-                >
-                  Next
-                </button>
               </div>
             </div>
           )}
