@@ -54,18 +54,18 @@ const questions: Question[] = [
     answers: [
       {
         label: "I love hands-on activities and experiments.",
-        scores: { sandpiper: 3, nesbit: 1, ralston: 1 },
+        scores: { sandpiper: 3, nesbit: 2, ralston: 1 },
         reason: "you enjoy learning by doing and jumping into activities",
       },
       {
         label: "I enjoy reading and writing.",
-        scores: { sandpiper: 0, nesbit: 2, ralston: 3 },
+        scores: { sandpiper: 1, nesbit: 2, ralston: 3 },
         reason:
           "you are drawn to reflection, reading, and independent thinking",
       },
       {
         label: "I like to listen and discuss ideas with others.",
-        scores: { sandpiper: 1, nesbit: 1, ralston: 3 },
+        scores: { sandpiper: 1, nesbit: 3, ralston: 2 },
         reason:
           "you thrive when learning includes conversation and shared ideas",
       },
@@ -79,18 +79,18 @@ const questions: Question[] = [
     answers: [
       {
         label: "I want to join sports teams and be active.",
-        scores: { sandpiper: 3, nesbit: 0, ralston: 1 },
+        scores: { sandpiper: 1, nesbit: 1, ralston: 3 },
         reason:
           "you want a school experience with motion, teamwork, and school spirit",
       },
       {
-        label: "I am interested in clubs like drama, music, or art.",
-        scores: { sandpiper: 1, nesbit: 3, ralston: 1 },
+        label: "I am interested in clubs like robotics, music, or art.",
+        scores: { sandpiper: 3, nesbit: 2, ralston: 1 },
         reason: "creative spaces and expressive clubs matter to you",
       },
       {
         label: "I want to participate in academic clubs and competitions.",
-        scores: { sandpiper: 0, nesbit: 1, ralston: 3 },
+        scores: { sandpiper: 2, nesbit: 1, ralston: 2 },
         reason:
           "you are excited by challenge, inquiry, and academic exploration",
       },
@@ -105,19 +105,19 @@ const questions: Question[] = [
       {
         label:
           "I like being in a large, bustling school with lots of students.",
-        scores: { sandpiper: 3, nesbit: 0, ralston: 1 },
+        scores: { sandpiper: 1, nesbit: 1, ralston: 3 },
         reason: "you are energized by a lively environment with lots happening",
       },
       {
         label: "I prefer a smaller school where I can get to know everyone.",
-        scores: { sandpiper: 0, nesbit: 3, ralston: 1 },
+        scores: { sandpiper: 3, nesbit: 3, ralston: 1 },
         reason:
           "a tight-knit community and familiar faces help you feel at home",
       },
       {
         label:
           "I want a school that has a good balance of social activities and quiet spaces.",
-        scores: { sandpiper: 1, nesbit: 1, ralston: 3 },
+        scores: { sandpiper: 3, nesbit: 3, ralston: 1 },
         reason: "you value a thoughtful balance between connection and calm",
       },
     ],
@@ -223,8 +223,6 @@ export default function Home() {
     <main className="page-shell">
       <h1>BRSSD Sorting Hat</h1>
       <section className="experience-card">
-        <div className="">
-        </div>
         <div className="media-panel">
           <video
             key={sceneVideo}
@@ -260,8 +258,8 @@ export default function Home() {
               <h2>Welcome, young wizards and witches.</h2>
               <p className="scene-text">
                 I am the Sorting Hat, and I am here to help you discover which
-                middle school is the best fit for you. Answer honestly, trust your
-                instincts, and let the magic begin.
+                middle school is the best fit for you. Answer honestly, trust
+                your instincts, and let the magic begin.
               </p>
               <button className="primary-button" onClick={goNext}>
                 Start
@@ -271,8 +269,8 @@ export default function Home() {
             <div className="scene-body">
               <p className="scene-label">Sorting Results</p>
               <h2>{result.school}</h2>
-              <p className="scene-text">{result.summary}</p>
-              <p className="result-callout">{result.explanation}</p>
+              {/* <p className="scene-text">{result.summary}</p> */}
+              {/* <p className="result-callout">{result.explanation}</p> */}
               <p className="footnote">
                 Congratulations. Now explore the real BRSSD school options with
                 your family for the full picture.
