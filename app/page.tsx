@@ -78,15 +78,15 @@ const questions: Question[] = [
     video: "/videos/sh-2.mp4",
     answers: [
       {
+        label: "I am interested in clubs like robotics, music, or art.",
+        scores: { sandpiper: 3, nesbit: 2, ralston: 1 },
+        reason: "creative spaces and expressive clubs matter to you",
+      },
+      {
         label: "I want to join sports teams and be active.",
         scores: { sandpiper: 1, nesbit: 1, ralston: 3 },
         reason:
           "you want a school experience with motion, teamwork, and school spirit",
-      },
-      {
-        label: "I am interested in clubs like robotics, music, or art.",
-        scores: { sandpiper: 3, nesbit: 2, ralston: 1 },
-        reason: "creative spaces and expressive clubs matter to you",
       },
       {
         label: "I want to participate in academic clubs and competitions.",
