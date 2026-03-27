@@ -161,6 +161,7 @@ button {
 }
 
 .scene-label {
+  display: none;
   color: var(--gold-deep);
 }
 
