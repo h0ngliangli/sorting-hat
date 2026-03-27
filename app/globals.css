@@ -39,6 +39,12 @@ button {
   padding: 32px;
 }
 
+.page-shell > h1 {
+  margin: 0 0 18px;
+  color: #fff7eb;
+  text-shadow: 0 0 24px rgba(221, 184, 106, 0.22);
+}
+
 .experience-card {
   width: min(1180px, 100%);
   min-height: 700px;
@@ -119,21 +125,21 @@ button {
   display: flex;
   flex-direction: column;
   padding: 34px;
-  background: var(--panel);
+  background: #1a1a1a;
 }
 
 .progress-row {
   display: grid;
   gap: 12px;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-  color: var(--muted);
+  color: #ccc;
   font-size: 0.95rem;
 }
 
 .progress-track {
   height: 10px;
   border-radius: 999px;
-  background: rgba(31, 29, 26, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
 
@@ -151,6 +157,11 @@ button {
   flex-direction: column;
   justify-content: center;
   padding-top: 18px;
+  color: #fff;
+}
+
+.scene-body h2 {
+  color: #fff;
 }
 
 .scene-label {
@@ -160,7 +171,7 @@ button {
 .scene-text {
   margin: 22px 0 0;
   font-size: 1.02rem;
-  color: var(--muted);
+  color: #ddd;
 }
 
 .answer-list {
@@ -174,9 +185,9 @@ button {
   padding: 18px 20px;
   text-align: left;
   border-radius: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 252, 246, 0.78);
-  color: var(--ink);
+  border: 1px solid rgba(221, 184, 106, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
   cursor: pointer;
   transition:
     transform 180ms ease,
@@ -187,14 +198,14 @@ button {
 
 .answer-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(172, 127, 40, 0.45);
-  box-shadow: 0 14px 28px rgba(31, 29, 26, 0.08);
+  border-color: rgba(221, 184, 106, 0.6);
+  box-shadow: 0 14px 28px rgba(221, 184, 106, 0.12);
 }
 
 .answer-card.selected {
-  background: rgba(221, 184, 106, 0.2);
-  border-color: rgba(172, 127, 40, 0.64);
-  box-shadow: inset 0 0 0 1px rgba(172, 127, 40, 0.16);
+  background: rgba(221, 184, 106, 0.18);
+  border-color: rgba(221, 184, 106, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(221, 184, 106, 0.32);
 }
 
 .button-row {
@@ -228,13 +239,14 @@ button {
 .result-callout {
   margin: 18px 0 0;
   padding: 16px 18px;
-  border-left: 4px solid var(--gold-deep);
-  background: rgba(255, 252, 246, 0.72);
+  border-left: 4px solid var(--gold);
+  background: rgba(221, 184, 106, 0.12);
+  color: #ddd;
 }
 
 .footnote {
   margin: 18px 0 0;
-  color: var(--muted);
+  color: #999;
 }
 
 @media (max-width: 960px) {

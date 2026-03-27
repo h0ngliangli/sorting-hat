@@ -210,27 +210,21 @@ export default function Home() {
 
   return (
     <main className="page-shell">
+      <h1>BRSSD Sorting Hat</h1>
       <section className="experience-card">
+        <div className="">
+        </div>
         <div className="media-panel">
           <video
             key={sceneVideo}
             className="scene-video"
             autoPlay
-            loop
             muted
             playsInline
           >
             <source src={sceneVideo} type="video/mp4" />
           </video>
           <div className="media-overlay" />
-          <div className="media-copy">
-            <p className="eyebrow">BRSSD 2026-2027 Middle School Guide</p>
-            <h1>The Sorting Hat Has Opinions</h1>
-            <p>
-              This interactive guide is for fun and exploration only. It does
-              not affect the actual school selection process.
-            </p>
-          </div>
         </div>
 
         <div className="content-panel">
